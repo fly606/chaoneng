@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="超能植愈香氛洗衣液 H5 互动页面" />
+  <title>超能植愈香氛洗衣液 | 植愈香氛实验室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="h5-shell" aria-label="超能植愈香氛洗衣液互动体验">
+    <section class="hero panel is-active" id="panel-hero" data-panel="0">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+      <div class="brand-tag">CHAO NENG · BOTANICAL CARE</div>
+      <div class="hero-copy">
+        <p class="eyebrow">超能植愈香氛洗衣液</p>
+        <h1>让衣物，住进一座<br />会呼吸的花园</h1>
+        <p class="lead">轻触唤醒植萃泡泡、香氛与柔软护理，开启 30 秒沉浸式洗护体验。</p>
+      </div>
+      <div class="product-stage" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="bottle">
+          <div class="cap"></div>
+          <div class="bottle-neck"></div>
+          <div class="bottle-body">
+            <span class="leaf leaf-a"></span>
+            <span class="leaf leaf-b"></span>
+            <span class="label">植愈<br />香氛</span>
+          </div>
+        </div>
+        <div class="bubble bubble-a"></div>
+        <div class="bubble bubble-b"></div>
+        <div class="bubble bubble-c"></div>
+      </div>
+      <button class="primary-btn" id="startBtn" type="button">开始植愈之旅</button>
+      <div class="swipe-hint">向上滑动 / 点击继续</div>
+    </section>
+
+    <section class="panel garden" id="panel-garden" data-panel="1">
+      <div class="section-title">
+        <p class="eyebrow">STEP 01 · 触摸植萃</p>
+        <h2>收集三重植愈能量</h2>
+        <p>点击叶片，点亮洁净、柔护、留香三种功效。</p>
+      </div>
+      <div class="leaf-grid" id="leafGrid">
+        <button class="plant-card" type="button" data-note="深层洁净">
+          <span class="plant-icon">🌿</span>
+          <strong>植萃去渍</strong>
+          <small>植物表活温和带走日常污渍</small>
+        </button>
+        <button class="plant-card" type="button" data-note="亲肤柔护">
+          <span class="plant-icon">🍃</span>
+          <strong>亲肤柔护</strong>
+          <small>贴身衣物也能安心清洗</small>
+        </button>
+        <button class="plant-card" type="button" data-note="长效留香">
+          <span class="plant-icon">🌸</span>
+          <strong>植愈香氛</strong>
+          <small>洗后散发清新花草气息</small>
+        </button>
+      </div>
+      <div class="progress-card">
+        <span>植愈能量</span>
+        <div class="progress-track"><i id="energyBar"></i></div>
+        <b id="energyText">0/3</b>
+      </div>
+    </section>
+
+    <section class="panel scent" id="panel-scent" data-panel="2">
+      <div class="section-title">
+        <p class="eyebrow">STEP 02 · 调配香氛</p>
+        <h2>选择你的今日香气</h2>
+        <p>滑动旋钮，匹配不同衣物场景的香氛情绪。</p>
+      </div>
+      <div class="scent-orbit" aria-hidden="true">
+        <span>晨露</span><span>白茶</span><span>铃兰</span><span>木质</span>
+      </div>
+      <label class="range-card" for="scentRange">
+        <span id="scentName">晨露绿意</span>
+        <input id="scentRange" type="range" min="0" max="3" value="0" step="1" />
+        <small id="scentDesc">适合通勤衬衫，像清晨花园一样清透。</small>
+      </label>
+    </section>
+
+    <section class="panel result" id="panel-result" data-panel="3">
+      <div class="result-card">
+        <p class="eyebrow">STEP 03 · 生成植愈报告</p>
+        <h2>你的洗护香氛指数</h2>
+        <div class="score-ring"><span id="scoreValue">92</span><small>分</small></div>
+        <p id="resultCopy">洁净力、柔护力与留香力已被唤醒，今天的衣物适合“晨露绿意”。</p>
+        <button class="primary-btn" id="replayBtn" type="button">再体验一次</button>
+      </div>
+      <footer>超能植愈香氛洗衣液 · 洗出自然治愈感</footer>
+    </section>
+
+    <nav class="dot-nav" aria-label="页面进度">
+      <button class="dot is-active" type="button" data-target="0" aria-label="第一页"></button>
+      <button class="dot" type="button" data-target="1" aria-label="第二页"></button>
+      <button class="dot" type="button" data-target="2" aria-label="第三页"></button>
+      <button class="dot" type="button" data-target="3" aria-label="第四页"></button>
+    </nav>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
