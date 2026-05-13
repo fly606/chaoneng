@@ -3,103 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="你的气味人格，藏着一座植物庄园——超能植愈香氛洗衣液 H5 互动体验" />
-  <title>你的气味人格，藏着一座植物庄园</title>
+  <meta name="description" content="超能植愈香氛系列 H5：从情绪识别、气味选择到植物调香与专属疗愈海报" />
+  <title>超能植愈香氛系列｜天然香气疗愈之旅</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <main class="app" aria-label="超能植愈香氛洗衣液气味人格测试">
-    <div class="grain" aria-hidden="true"></div>
-    <div class="floating-petals" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span>
+  <main class="app" id="app" aria-label="超能植愈香氛系列沉浸式 H5">
+    <div class="ambient-layer" aria-hidden="true">
+      <span class="mist mist-a"></span>
+      <span class="mist mist-b"></span>
+      <span class="petal p1"></span>
+      <span class="petal p2"></span>
+      <span class="petal p3"></span>
+      <span class="petal p4"></span>
+      <span class="petal p5"></span>
     </div>
 
-    <section class="screen hero is-active" data-screen="0">
-      <p class="brand">CHAO NENG · BOTANICAL HEALING</p>
-      <div class="hero__garden" aria-hidden="true">
-        <span class="sun"></span>
-        <span class="pond"></span>
-        <span class="arch arch--left"></span>
-        <span class="arch arch--right"></span>
-        <span class="flower f1"></span>
-        <span class="flower f2"></span>
-        <span class="flower f3"></span>
+    <section class="screen hero is-active" data-screen="0" aria-labelledby="heroTitle">
+      <div class="forest-light" aria-hidden="true">
+        <span class="beam beam-a"></span>
+        <span class="beam beam-b"></span>
+        <span class="beam beam-c"></span>
+        <span class="forest-pond"></span>
       </div>
-      <div class="hero__content">
-        <p class="kicker">超能植愈香氛洗衣液</p>
-        <h1>你的气味人格，<br />藏着一座植物庄园</h1>
-        <p class="subtitle">一场关于“香气疗愈”的沉浸式天然植愈之旅</p>
-        <p class="intro">不是卖洗衣液，而是帮你洗掉生活里的疲惫情绪。完成 4 道选择题，生成你的专属植愈人格香卡。</p>
+      <div class="hero-copy">
+        <p class="brand">超能植愈香氛系列</p>
+        <h1 id="heroTitle">你有多久，<br />没认真闻过生活的味道了？</h1>
+        <p>开启一场天然香气的疗愈之旅</p>
       </div>
-      <button class="cta" type="button" id="startBtn">进入莫奈植物庄园</button>
-      <p class="hint">建议戴上耳机，慢慢选择最近的自己</p>
+      <button class="primary-btn" type="button" data-next>开启植愈之旅</button>
+      <p class="gesture-hint">花瓣缓慢飘落 · 空气轻轻流动 · 微雾在底部扩散</p>
     </section>
 
-    <section class="screen quiz" data-screen="1">
-      <div class="topbar">
-        <span>气味人格测试</span>
-        <strong><b id="questionIndex">01</b>/04</strong>
+    <section class="screen emotion" data-screen="1" aria-labelledby="emotionTitle">
+      <header class="screen-header">
+        <p>01 / 情绪进入植物世界</p>
+        <h2 id="emotionTitle">此刻，你最想让哪一种情绪被植物听见？</h2>
+      </header>
+      <div class="emotion-garden" id="emotionGarden" aria-hidden="true">
+        <span class="garden-core"></span>
+        <span class="eco eco-a"></span>
+        <span class="eco eco-b"></span>
+        <span class="eco eco-c"></span>
       </div>
-      <div class="progress" aria-hidden="true"><i id="quizProgress"></i></div>
-      <article class="question-card">
-        <p class="kicker" id="questionKicker">RECENT MOOD</p>
-        <h2 id="questionTitle">最近的你，更像哪一种天气？</h2>
-        <div class="options" id="options"></div>
-      </article>
-      <button class="ghost-btn" type="button" id="backBtn">返回上一题</button>
+      <div class="emotion-grid" id="emotionGrid">
+        <button class="glass-card" type="button" data-emotion="anxious">
+          <i>🌺</i><strong>焦虑之花</strong><span>脑海像风吹乱的花瓣</span>
+        </button>
+        <button class="glass-card" type="button" data-emotion="friction">
+          <i>🌿</i><strong>内耗之藤</strong><span>反复拉扯，想被松开</span>
+        </button>
+        <button class="glass-card" type="button" data-emotion="pressure">
+          <i>🍃</i><strong>压力之叶</strong><span>肩上有一片沉沉的绿</span>
+        </button>
+        <button class="glass-card" type="button" data-emotion="lonely">
+          <i>🌙</i><strong>孤独之花</strong><span>安静，但渴望被回应</span>
+        </button>
+        <button class="glass-card" type="button" data-emotion="healing">
+          <i>🌱</i><strong>治愈之芽</strong><span>已经准备重新生长</span>
+        </button>
+      </div>
+      <p class="record-tip" id="recordTip" aria-live="polite">选择后，植物花园会记录你的情绪。</p>
     </section>
 
-    <section class="screen transition" data-screen="2">
-      <div class="scent-bottle" aria-hidden="true">
-        <span class="cap"></span>
-        <span class="neck"></span>
-        <span class="body"><i>植愈<br />香氛</i></span>
+    <section class="screen scent" data-screen="2" aria-labelledby="scentTitle">
+      <header class="screen-header">
+        <p>02 / 气味即情绪</p>
+        <h2 id="scentTitle">你最想留在衣物上的味道是什么？</h2>
+      </header>
+      <div class="scent-scene" id="scentScene" aria-hidden="true">
+        <span class="scent-orb"></span>
+        <span class="scent-ring ring-a"></span>
+        <span class="scent-ring ring-b"></span>
       </div>
-      <p class="kicker">BOTANICAL ANALYSIS</p>
-      <h2>正在唤醒你的植物庄园</h2>
-      <p>植物香气正在读取你的情绪、衣着与生活想象……</p>
-      <div class="loading"><i></i></div>
+      <div class="choice-list" id="scentChoices">
+        <button type="button" data-scent="rain">雨后花园<span>潮湿花瓣与绿叶清气</span></button>
+        <button type="button" data-scent="shirt">阳光白衬衫<span>晒过棉布的清透皂感</span></button>
+        <button type="button" data-scent="wood">深夜木质香<span>安定、低语、余温悠长</span></button>
+        <button type="button" data-scent="morning">清晨花园<span>露珠、嫩芽与第一束光</span></button>
+        <button type="button" data-scent="hug">被拥抱后的温度<span>柔软织物里的安心感</span></button>
+      </div>
     </section>
 
-    <section class="screen result" data-screen="3">
-      <div class="poster" id="poster">
-        <div class="poster__badge">专属植愈人格香卡</div>
-        <p class="poster__pretitle">你的气味人格是</p>
-        <h2 id="personaName">晨露松弛派</h2>
-        <div class="persona-visual" id="personaVisual" aria-hidden="true">
-          <span class="visual-core"></span>
-          <span class="visual-leaf a"></span>
-          <span class="visual-leaf b"></span>
-          <span class="visual-flower"></span>
+    <section class="screen perfumery" data-screen="3" aria-labelledby="mixTitle">
+      <header class="screen-header">
+        <p>03 / 植物调香体验</p>
+        <h2 id="mixTitle">拖拽植物香氛，调制你的专属植愈香气</h2>
+      </header>
+      <div class="mix-stage">
+        <div class="drop-zone" id="dropZone">
+          <span class="drop-glow"></span>
+          <strong>把植物拖到这里</strong>
+          <small id="mixHint">至少加入 2 种植物香调</small>
         </div>
-        <p class="healing-copy" id="healingCopy">愿你把忙乱洗成清晨，把疲惫晾成微风。</p>
-        <dl class="result-list">
-          <div>
-            <dt>植物香氛人格</dt>
-            <dd id="scentProfile">晨露绿叶调</dd>
-          </div>
-          <div>
-            <dt>香气疗愈动画</dt>
-            <dd id="animationName">露珠扩散 · 绿叶舒展</dd>
-          </div>
-          <div>
-            <dt>超能产品推荐</dt>
-            <dd id="productRecommendation">超能植愈香氛洗衣液 · 清新植萃香</dd>
-          </div>
-        </dl>
-        <div class="share-line">长按保存，把你的植物庄园分享给朋友</div>
+        <div class="ingredient-tray" id="ingredientTray">
+          <button class="ingredient" type="button" draggable="true" data-note="iris">白鸢尾</button>
+          <button class="ingredient" type="button" draggable="true" data-note="magnolia">白兰</button>
+          <button class="ingredient" type="button" draggable="true" data-note="tuberose">晚香玉</button>
+          <button class="ingredient" type="button" draggable="true" data-note="woody">木质香调</button>
+        </div>
       </div>
-      <div class="actions">
-        <button class="cta" type="button" id="shareBtn">生成分享海报文案</button>
-        <button class="ghost-btn" type="button" id="restartBtn">重新测试</button>
-      </div>
-      <p class="share-copy" id="shareCopy" aria-live="polite"></p>
+      <button class="primary-btn is-disabled" type="button" id="finishMixBtn" disabled>生成植愈人格</button>
     </section>
 
-    <nav class="dots" aria-label="体验进度">
-      <button class="is-active" type="button" data-goto="0" aria-label="首页"></button>
-      <button type="button" data-goto="1" aria-label="测试"></button>
-      <button type="button" data-goto="3" aria-label="结果"></button>
+    <section class="screen persona" data-screen="4" aria-labelledby="personaTitle">
+      <article class="persona-card">
+        <p class="card-label">04 / 植愈人格生成</p>
+        <h2 id="personaTitle">你的植愈香氛人格</h2>
+        <div class="persona-bloom" id="personaBloom" aria-hidden="true">
+          <span></span><i></i><b></b>
+        </div>
+        <p class="persona-name" id="personaName">晨露复原者</p>
+        <p class="persona-desc" id="personaDesc">你适合把疲惫洗成清晨，把生活重新晾回微风里。</p>
+        <dl>
+          <div><dt>植物香型</dt><dd id="personaScent">雨后花园 × 白鸢尾</dd></div>
+          <div><dt>疗愈标签</dt><dd id="personaTag">轻盈重启 / 低压呼吸</dd></div>
+          <div><dt>产品推荐</dt><dd id="personaProduct">超能植愈香氛洗衣液 · 清新植萃香</dd></div>
+        </dl>
+      </article>
+      <button class="primary-btn" type="button" data-next>查看产品植愈科技</button>
+    </section>
+
+    <section class="screen technology" data-screen="5" aria-labelledby="techTitle">
+      <header class="screen-header">
+        <p>05 / 天然 × 科技净护</p>
+        <h2 id="techTitle">让香气从开盖、洗涤到穿着持续释放</h2>
+      </header>
+      <div class="tech-flow" aria-hidden="true">
+        <span class="molecule m1"></span><span class="molecule m2"></span><span class="molecule m3"></span>
+        <div class="fabric">衣物纤维</div>
+      </div>
+      <div class="tech-list">
+        <article><strong>5重香氛专利技术</strong><span>模拟多层香气结构，前中后调渐次释放。</span></article>
+        <article><strong>720小时持久留香体系</strong><span>以微胶囊扩散动效呈现穿着过程中的香气续航。</span></article>
+        <article><strong>双重异味中和机制</strong><span>从源头净味到衣物留香，完成天然智能洗护闭环。</span></article>
+        <article><strong>植物净护成分</strong><span>椰子油、酵素与植物精油构成天然净护想象。</span></article>
+      </div>
+      <button class="primary-btn" type="button" data-next>生成我的疗愈海报</button>
+    </section>
+
+    <section class="screen share" data-screen="6" aria-labelledby="shareTitle">
+      <article class="poster" id="sharePoster">
+        <p class="poster-kicker">CHAO NENG BOTANICAL HEALING</p>
+        <h2 id="shareTitle">我的植愈香氛疗愈海报</h2>
+        <div class="poster-art" aria-hidden="true">
+          <span class="poster-bottle"></span>
+          <span class="poster-flower"></span>
+          <span class="poster-wave"></span>
+        </div>
+        <p class="poster-name" id="posterName">晨露复原者</p>
+        <p class="poster-copy" id="posterCopy">愿你的衣物留住自然香气，也留住被生活治愈的瞬间。</p>
+        <div class="poster-meta">
+          <span id="posterMood">情绪植物：治愈之芽</span>
+          <span id="posterNotes">专属香调：白鸢尾 / 白兰</span>
+        </div>
+      </article>
+      <div class="share-actions">
+        <button class="primary-btn" type="button" id="copyShareBtn">复制分享文案</button>
+        <button class="secondary-btn" type="button" id="restartBtn">再体验一次</button>
+      </div>
+      <p class="copy-tip" id="copyTip" aria-live="polite">长按海报保存，分享你的植物疗愈人格。</p>
+    </section>
+
+    <nav class="progress-nav" aria-label="页面进度">
+      <button class="is-active" type="button" data-goto="0" aria-label="第一页"></button>
+      <button type="button" data-goto="1" aria-label="第二页"></button>
+      <button type="button" data-goto="2" aria-label="第三页"></button>
+      <button type="button" data-goto="3" aria-label="第四页"></button>
+      <button type="button" data-goto="4" aria-label="第五页"></button>
+      <button type="button" data-goto="5" aria-label="第六页"></button>
+      <button type="button" data-goto="6" aria-label="第七页"></button>
     </nav>
   </main>
 
